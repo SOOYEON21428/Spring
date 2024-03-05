@@ -14,4 +14,22 @@ public class MessageBeanKo implements MessageBean{
 		System.out.println("안녕하세요" + name );
 	}
 
+	@Override
+	public void sayHello() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sayHello(String fruit, int cost) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sayHello(String fruit, int cost, int qty) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

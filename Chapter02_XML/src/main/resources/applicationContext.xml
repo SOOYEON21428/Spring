@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the MessageBeanImpl bean -->
+    <bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
+         <constructor-arg value="사과"/>
+         <constructor-arg value="5000"/>
+    </bean>
+    
+    <!-- Define the CalcAdd bean with constructor injection -->
+    <bean id="add" class="sample02.CalcAdd">
+        <constructor-arg value="25"/>
+        <constructor-arg value="36"/>
+    </bean>
+
+    <!-- Define the CalcMul bean with setter injection -->
+    <bean id="mul" class="sample02.CalcMul">
+        <property name="x" value="25"/>
+        <property name="y" value="36"/>
+    </bean>
+    
+     <bean id="sungJukDTO" class="sample03.SungJukDTO">
+        <property name="name" value="홍길동" />
+        <property name="kor" value="97" />
+        <property name="eng" value="100" />
+        <property name="math" value="95" />
+    </bean>
+    
+    <!-- Setter Injection을 사용한 빈 생성 -->
+
+   
+<bean id="helloSpring" class="sample04.HelloSpring" />
+
+<bean id="sungJukOutput" class="sample04.SungJukOutput">
+        <!-- Constructor injection -->
+        <constructor-arg ref="sungJukList"/>
+    </bean>
+
+
+    <!-- Constructor Injection을 사용한 빈 생성 -->
+<bean id="sungJukImpl" class="sample03.SungJukImpl">
+        <constructor-arg ref="sungJukDTO" />
+    </bean>
+    
+    <bean id="sungJukDTO2" class="sample04.SungJukDTO2">
+        <property name="name" value="John" />
+        <property name="kor" value="90" />
+        <property name="eng" value="85" />
+        <property name="math" value="75" />
+        <!-- Set other properties if needed -->
+    </bean>
+    
+    <!-- Define another SungJukDTO2 bean -->
+    <bean id="anotherSungJukDTO2" class="sample04.SungJukDTO2">
+        <property name="name" value="Alice" />
+        <property name="kor" value="95" />
+        <property name="eng" value="88" />
+        <property name="math" value="80" />
+        <!-- Set other properties if needed -->
+    </bean>
+
+    <!-- Define a list bean containing SungJukDTO2 instances -->
+    <bean id="sungJukList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="sungJukDTO2" />
+                <ref bean="anotherSungJukDTO2" />
+                <!-- Add more SungJukDTO2 beans here if needed -->
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
+   

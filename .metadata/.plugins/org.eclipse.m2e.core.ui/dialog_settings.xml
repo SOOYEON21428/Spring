@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/Users/bagsuyeon/Desktop/Spring/Chapter01_XML"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -43,12 +44,16 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="Chapter02_XML"/>
+			<item value="Chapter02_ANNO"/>
 			<item value="Spring3"/>
 			<item value="Chapter01_XML"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Chapter02_XML"/>
+			<item value="Chapter02_ANNO"/>
 			<item value="Chapter01_ANNO"/>
 			<item value="Chapter01_XML"/>
 			<item value="Chapter01_xml"/>

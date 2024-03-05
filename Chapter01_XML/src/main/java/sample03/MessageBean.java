@@ -1,6 +1,7 @@
 package sample03;
 
 public interface MessageBean {
-
-	public void sayHello(String name);
+    void sayHello();
+    void sayHello(String fruit, int cost);
+    void sayHello(String fruit, int cost, int qty);
 }
