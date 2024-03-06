@@ -1,10 +1,13 @@
 // SungJukDelete.java
 package sample04;
 
-import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
+import lombok.setter;
 @Component
 public class SungJukDelete implements SungJuk {
 

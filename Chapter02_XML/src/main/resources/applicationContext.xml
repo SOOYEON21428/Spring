@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!-- Define the MessageBeanImpl bean -->
     <bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
@@ -31,12 +35,7 @@
     <!-- Setter Injection을 사용한 빈 생성 -->
 
    
-<bean id="helloSpring" class="sample04.HelloSpring" />
-
-<bean id="sungJukOutput" class="sample04.SungJukOutput">
-        <!-- Constructor injection -->
-        <constructor-arg ref="sungJukList"/>
-    </bean>
+  <!-- Define beans -->
 
 
     <!-- Constructor Injection을 사용한 빈 생성 -->
@@ -44,22 +43,18 @@
         <constructor-arg ref="sungJukDTO" />
     </bean>
     
-    <bean id="sungJukDTO2" class="sample04.SungJukDTO2">
-        <property name="name" value="John" />
-        <property name="kor" value="90" />
-        <property name="eng" value="85" />
-        <property name="math" value="75" />
-        <!-- Set other properties if needed -->
+    <bean id="fileOutputter" class="sample05.FileOutputter">
+    <property name="filePath" value="D:\Spring"></property>
+    <property name="filePath" value="resul.txt"></property>
     </bean>
     
-    <!-- Define another SungJukDTO2 bean -->
-    <bean id="anotherSungJukDTO2" class="sample04.SungJukDTO2">
-        <property name="name" value="Alice" />
-        <property name="kor" value="95" />
-        <property name="eng" value="88" />
-        <property name="math" value="80" />
-        <!-- Set other properties if needed -->
+    <bean id="messageBeanImpl2" class="sample05.MessageBeanImpl">
+    	<constrictor-arg value="홍길동"></constrictor-arg>
     </bean>
+    
+  
+    
+    <!-- Define another SungJukDTO2 bean -->
 
     <!-- Define a list bean containing SungJukDTO2 instances -->
     <bean id="sungJukList" class="java.util.ArrayList">
@@ -71,5 +66,8 @@
             </list>
         </constructor-arg>
     </bean>
+    
+    
+    
 </beans>
    

@@ -17,7 +17,6 @@ public class SungJukUpdate implements SungJuk {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("3번인 경우 - SungJukUpdate.java");
         System.out.print("수정할 이름 입력 : ");
         String name = scanner.nextLine();
         SungJukDTO2 foundSungJuk = null;
